@@ -1,18 +1,3 @@
-body,section{
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: "Microsoft YaHei";
-}
-ul,li{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-a{
-    text-decoration: none;
-    color: #fff;
-}
 header{
     display: flex;
     width: 100%;
@@ -22,6 +7,7 @@ header{
     top: 0;
     left:0;
     margin: 0 auto;
+    z-index: 999;
 }
 header div{
     text-align: center;
@@ -51,6 +37,8 @@ header div{
     background-image: url("../img/4.jpg");
 }
 /*header*/
+/*默认大屏*/
+/*大屏导航*/
 header .nav{
     width: 1000px;
     height: 100%;
@@ -58,10 +46,10 @@ header .nav{
 }
 .log{
     height: 40px;
-    margin-top: 10px;
     background-image: url("../img/big.png");
     background-position: -2px 0px;
     background-repeat: no-repeat;
+    margin-bottom: 10px;
 }
 .log a{
     display: block;
@@ -72,58 +60,182 @@ header .nav{
     display: flex;
     align-items: flex-end;
 }
-
 .nav .list:nth-child(2),:nth-child(3),:nth-child(4){
    margin-bottom: 15px;
     font-size: 15px;
     justify-content: flex-start;
+    font-family: "Microsoft YaHei";
 }
 .nav .list:nth-child(5),:nth-child(6),:nth-child(7),:nth-child(8){
     margin-bottom: 5px;
     font-size: 12px;
     justify-content: flex-end;
+    font-family: "Microsoft YaHei";
+}
+.nav .list a{
+    color: #fff;
 }
 .nav .list:nth-child(8) a{
     color: #FFDA28;
 }
-/*header end*/
-/* section*/
-.first{
-    margin-top: 60px;
+/*大屏导航 end*/
+/*小屏导航*/
+.menue-option{
+    display: none;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    background: #168BD8;
 }
-.first .left{
-    width:500px;
-    height: 158px;
-    margin-top: 60px;
-    margin-left: 0;
-    background: url("../img/first.png");
+.log2{
+    position: absolute;
+    height: 40px;
+    top: 5px;
+    left: 20px;
+    background-image: url("../img/big.png");
+    background-position: -2px 0px;
+    background-repeat: no-repeat;
 }
-.first .flight{
-    width:119px;
-    height:78px;
-    margin-left: 295px;
-    background: url("../img/first2.png");
+.menu-btn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 20px;
+    top: 10px;
 }
-.first .right{
-    width: 340px;
-    height: 360px;
-    float: right;
-    margin-right: 60px;
-    margin-top: -200px;
-    background: #4ebffc;
-    border-radius: 15px;
+.menu-btn .one{
+    width: 40px;
+    height: 2px;
+    background: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-.login{
+.menu-btn .two{
+    width: 40px;
+    height: 2px;
+    background: #fff;
+}
+.smallnav{
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+    perspective: 0px;
+    perspective-origin: top;
+}
+.smallnav li{
+    width: 100%;
+    height: 40px;
+    background: #000;
+    opacity: 0.8;
+    margin: 0;
+    border-bottom: 1px solid #fff;
+    transform: rotateX(90deg);
+}
+.smallnav li a{
     width: 100%;
     height: 100%;
+    color: #fff;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+}
+/*小屏导航end*/
+/*header end*/
+/* section*/
+.cloud{
+    width: 300%;
+    height: 300px;
+    z-index: -1;
+}
+.cloud div{
+    width: 33.333333%;
+    height: 100%;
+    float: left;
+}
+.top{
+    background-image: url("../img/cloud1.png");
+}
+.middle{
+    background-image: url("../img/cloud2.png");
+}
+.bottom{
+    background-image: url("../img/cloud3.png");
+}
+.container{
+    width: 1000px;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: -240px;
+}
+.row{
+    height: 100%;
+    position: relative;
+}
+.firstL{
+    position: absolute;
+    width:500px;
+    height: 440px;
+    float: left;
+    top: 30px;
+    left: 0;
+    background: url("../img/first.png");
+    background-repeat:no-repeat;
+}
+.flight{
+    position: absolute;
+    width: 119px;
+    height: 78px;
+    right: 90px;
+    top: -10px;
+    background-image: url("../img/first2.png");
+    background-repeat:no-repeat;
+    transform: translate(0,0);
+}
+.ship{
+    width: 242px;
+    height: 228px;
+    background-image: url("../img/first5.png");
+    background-repeat:no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+    z-index: 1000;
+    /*transform: translateX(0);*/
+}
+.firstR{
+    position: absolute;
+    width: 340px;
+    height: 300px;
+    right: 0;
+    top: 30px;
+    background: #4ebffc;
+    border-radius: 8px;
+}
+/*.imgR{
+    position: absolute;
+    width: 340px;
+    height: 300px;
+    left: 0;
+    top: 30px;
+    background: #4ebffc;
+    border-radius: 8px;
+    display: none;
+}*/
+.login{
+    width:100%;
+    height: 100%;
     padding-top: 26px;
-    padding-left: 20px;
+    padding-left: 10px;
+    text-align: center;
 }
 .username{
     width: 300px;
     height: 40px;
     margin: 0 auto;
     margin-bottom: 20px;
+    background-image: url("../img/user.png");
 }
 .pass{
     width: 300px;
@@ -140,10 +252,6 @@ header .nav{
     width: 100px;
     height: 40px;
 }
-.change{
-    font-size: 15px;
-    color: #fff;
-}
 .sub{
     width: 300px;
     height: 35px;
@@ -153,9 +261,9 @@ header .nav{
     color: #666;
     margin-bottom: 15px;
 }
-.bottom{
-    width: 300px;
-    margin: 0 auto;
+.change{
+    font-size: 15px;
+    color: #fff;
 }
 .safe{
     display: block;
@@ -164,35 +272,83 @@ header .nav{
 }
 .forgetP{
     display: block;
-   float: left;
+    float: left;
+}
+.first .mask{
+    width: 100%;
+    height: 180px;
+    background: #0B67BE;
+    margin-top: 80px;
+    position: relative;
+    z-index: 998;
+}
+.first .mask .left{
+    position: absolute;
+    width: 265px;
+    height: 175px;
+    left: -182px;
+    top:-50px;
+    background-image: url("../img/first3.png");
+}
+.first .mask .center{
+    width: 63px;
+    height: 78px;
+    position: absolute;
+    right: 288px;
+    top: -13px;
+    background-image: url("../img/first6.png");
+}
+.first .mask .right{
+    width: 260px;
+    height: 175px;
+    position: absolute;
+    right: -129px;
+    top: -47px;
+    background-image: url("../img/first4.png");
+}
+.first .mask .arrow{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/arrow.png");
+    background-repeat: no-repeat;
+    left: 50%;
+    top: 50px;
+    transform: translate(0,0);
 }
 /*second*/
-.second{
-    margin-top: 0;
+.second .container{
+    margin-top: 60px;
 }
 .secondL{
+    position: absolute;
     width: 500px;
-    height: 130px;
-    float: left;
-    margin-top: 125px;
-    margin-left: 25px;
+    height: 126px;
+    left: 0;
+    top: 128px;
+}
+.sectionL{
+    transform: translate(0px);
 }
 .secondR{
-    float: right;
+    position: absolute;
     width: 444px;
     height: 427px;
-    float: right;
-    margin-right: 100px;
-    margin-top: 30px;
+    top: 10px;
+    right: 0px;
     background: url("../img/second1.png");
+}
+.sectionR{
+    transform: translate(10px);
 }
 .secondL .y-ain {
     width: 66px;
     height: 126px;
     float: left;
     margin-top: 0;
-   background: url("../img/y-ain.png");
-  background-size: contain;
+    transform: rotateY(0deg);
+    background-size: contain;
+    background: url("../img/y-ain.png");
 }
 .text{
     width: 414px;
@@ -217,26 +373,76 @@ header .nav{
     color: #fff;
     margin-top: -40px;
 }
+.second .mask{
+    width: 100%;
+    height: 88px;
+    margin-top: 165px;
+    position: relative;
+    z-index: 998;
+}
+.second .mask .square:nth-child(1){
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    left: 70px;
+    bottom: 0;
+    background: #5BACB4;
+}
+.second .mask .square:nth-child(2){
+    width: 88px;
+    height: 88px;
+    position: absolute;
+    left: 158px;
+    bottom: 0;
+    background: #5BACB4;
+}
+.second .mask .square:nth-child(3){
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    left: 246px;
+    top: 44px;
+    background: #8AE75A;
+}
+.second .mask .square:nth-child(4){
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    right: 328px;
+    top: 44px;
+    background: #8AE75A;
+}
+.second .mask .square:nth-child(5){
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    right: 240px;
+    bottom: 0;
+    background: #4AC179;
+}
 /*section end*/
 /*third*/
 .third{
-   margin-top: 0;
+    margin-bottom: -10px;
+}
+.third .container{
+   margin-top: 60px;
 }
 .thirdL{
     width: 500px;
     height: 130px;
-    float: left;
-    margin-top: 125px;
-    margin-left: 25px;
+    position: absolute;
+    left: 0;
+    top: 128px;
 }
 .thirdR{
     float: right;
     width: 444px;
     height: 427px;
-    float: right;
-    margin-right: 100px;
-    margin-top: 30px;
+    right: 0;
+    top: 10px;
     background: url("../img/third1.png");
+    background-repeat: no-repeat;
 }
 .thirdL .y-ain {
     width: 66px;
@@ -271,24 +477,24 @@ header .nav{
 }
 /*third end*/
 /*forth*/
-.forth{
-    margin-top: 0;
+.forth .container{
+    margin-top: 60px;
 }
 .forthL{
     width: 500px;
     height: 130px;
-    float: left;
-    margin-top: 125px;
-    margin-left: 25px;
+    position: absolute;
+  left: 0;
+   top: 128px;
 }
 .forthR{
-    float: right;
     width: 444px;
     height: 427px;
-    float: right;
-    margin-right: 100px;
-    margin-top: 30px;
-    background: url("../img/forth1.png");
+    position: absolute;
+    right: 0;
+    top: 0px;
+    background-image: url("../img/forth1.png");
+    background-repeat: no-repeat;
 }
 .forthL .y-ain {
     width: 66px;
@@ -322,20 +528,14 @@ header .nav{
     margin-top: -40px;
 }
 /*forth end*/
-/*fixnav*/
-.fixnav{
-    width: 28px;
-    /*height: 80px;*/
-    position: fixed;
-   top: 145px;
-    right: 20px;
+@media screen and (max-width: 992px) {
+    .nav{
+        display: none;
+    }
+    .menue-option{
+        display: block;
+    }
+    .firstR{
+        left: 20%;
+    }
 }
-.fixnav li{
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 1px solid #666;
-    margin: 0 auto;
-    margin-top: 10px;
-}
-/*fixnav end*/
